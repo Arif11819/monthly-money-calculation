@@ -25,3 +25,20 @@ document.getElementById('calculate-total').addEventListener('click', function ()
     totalBalance.innerText = restIncomeAmount;
 
 })
+
+document.getElementById('save-button').addEventListener('click', function () {
+    const saveInput = document.getElementById('save-field');
+    const saveAmount = parseInt(saveInput.value);
+
+    const totalSaving = document.getElementById('total-saving');
+
+    const incomeInput = document.getElementById('income-field');
+    const incomeAmount = parseInt(incomeInput.value);
+
+    const savingAmount = (incomeAmount * saveAmount) / 100;
+    totalSaving.innerText = savingAmount;
+
+    const remainingTotal = document.getElementById('remaing-total-balance');
+
+
+})
