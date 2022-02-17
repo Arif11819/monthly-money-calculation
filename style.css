@@ -1,6 +1,5 @@
 .notify-section{
     text-align: left;
-    margin-right: 150px;
     margin-top: 0px;
 }
 .notify{
@@ -8,5 +7,4 @@
     font-weight: 400;
     color: rgb(255, 8, 0);
     display: none; 
-    
 }

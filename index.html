@@ -19,14 +19,14 @@
         <header>
             <h1 class="text-center mt-4 mb-5 fw-bold text-info">Monthly-Money-Calculation</h1>
         </header>
-        <div class="row container-fluid">
-            <div class="col-lg-6 col-sm-12">
-                <div class="card ms-5 h-75 w-75">
+        <div class="row container-fluid row-cols-md-2 row-cols-lg-2">
+            <div class="col-lg-6 col-md-12">
+                <div class="card ms-5 h-100 w-75">
                     <img class="h-100" src="images/money.jpg" alt="">
                 </div>
             </div>
-            <div class="col-lg-6 col-sm-12 mb-0 ">
-                <div class="card mt-2 ms-5 ps-5 w-75 h-75 bg-success bg-opacity-10">
+            <div class="col-lg-6 col-md-12 mb-0 ">
+                <div class="card mt-2 ms-5 ps-5 w-75 h-100 bg-success bg-opacity-10">
 
                     <h5 class="mt-5 ms-5 ps-5">Income</h5>
                     <p>Income : <input id="income-field" type="text"></p>
@@ -42,15 +42,17 @@
                     <h5 class="ms-5 ps-5">Balance : <span id="total-balance">00</span></h5>
                     <br>
                     <p>Save : <input id="save-field" type="text"> % <button id="save-button" type="button"
-                            class="btn btn-info btn-sm ps-5 pe-5 pt-1 pb-1 text-white">Save</button>
+                            class="btn btn-info btn-sm ps-5 pe-5 pt-1 pb-1 text-white"> Save</button>
                     </p>
                     <h5 class="ms-5 ps-4">Saving Amount : <span id="total-saving">00</span></h5>
                     <h5 class="ms-5 ps-2">Remaining Balance : <span id="remaing-total-balance">00</span></h5>
 
                 </div>
                 <div class="notify-section">
-                    <p id="notify-failed" class="notify">You don't give a string</p>
-                    <p id="again-failed" class="notify">Give a positive number</p>
+                    <p id="notify-failed" class="notify">Your Balance doesn't lower than Saving Amount</p>
+                    <p id="again-failed" class="notify">Please Enter a number</p>
+                    <p id="more-failed" class="notify">Please Enter a positive number</p>
+                    <p id="last-failed" class="notify">Expenese doesn't getter than Income</p>
                 </div>
             </div>
         </div>
