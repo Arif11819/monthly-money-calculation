@@ -1,44 +1,61 @@
+// Expenses input field
+
+function getInputValue(product) {
+    const expenbsesInput = document.getElementById(product + '-field');
+    const expensesAmount = parseInt(expenbsesInput.value);
+    return expensesAmount;
+
+};
+// calculate total expenses and balance
+
+function getTotalUpdate() {
+    const totalExpenses = getInputValue('food') + getInputValue('rent') + getInputValue('clothes');
+    document.getElementById('total-expenses').innerText = totalExpenses;
+    const totalBalance = getInputValue('income') - totalExpenses;
+    document.getElementById('total-balance').innerText = totalBalance;
+    return totalBalance;
+};
+// save input field
+
+function getSaveInput(number) {
+    const saveInput = document.getElementById(number + '-field');
+    const saveAmount = parseInt(saveInput.value);
+    return saveAmount;
+
+};
+// update save total
+
+function getSaveTotal() {
+    const saveTotal = (getSaveInput('income') * getSaveInput('save')) / 100;
+    document.getElementById('total-saving').innerText = saveTotal;
+    return saveTotal;
+};
+// calculate remaining total balance
+
+function getRemainingTotal(totalBalance, saveTotal) {
+    const remainingTotal = document.getElementById('remaing-total-balance').innerText = getTotalUpdate() - getSaveTotal();
+
+}
+// calculate handler
+
 document.getElementById('calculate-total').addEventListener('click', function () {
-    const incomeInput = document.getElementById('income-field');
-    const incomeAmount = parseInt(incomeInput.value);
-
-    const foodInput = document.getElementById('food-field');
-    const foodAmount = parseInt(foodInput.value);
-
-    const rentInput = document.getElementById('rent-field');
-    const rentAmount = parseInt(rentInput.value);
-
-    const clothesInput = document.getElementById('clothes-field');
-    const clothesAmount = parseInt(clothesInput.value);
-
-    const totalExpensesAmount = foodAmount + rentAmount + clothesAmount;
-    restIncomeAmount = incomeAmount - totalExpensesAmount;
-
-    // get total expenses
-    const totalExpenses = document.getElementById('total-expenses');
-    const totalExpensesText = totalExpenses.innerText;
-    totalExpenses.innerText = totalExpensesAmount;
-
-    // get total balance
-    const totalBalance = document.getElementById('total-balance');
-    const totalBalanceText = totalBalance.innerText;
-    totalBalance.innerText = restIncomeAmount;
-
-})
+    getInputValue('income');
+    getInputValue('food');
+    getInputValue('rent');
+    getInputValue('clothes');
+    getTotalUpdate();
+});
+// save handler
 
 document.getElementById('save-button').addEventListener('click', function () {
-    const saveInput = document.getElementById('save-field');
-    const saveAmount = parseInt(saveInput.value);
-
     const totalSaving = document.getElementById('total-saving');
+    getSaveInput('save');
+    getSaveInput('income');
 
-    const incomeInput = document.getElementById('income-field');
-    const incomeAmount = parseInt(incomeInput.value);
+    getSaveTotal();
 
-    const savingAmount = (incomeAmount * saveAmount) / 100;
-    totalSaving.innerText = savingAmount;
+    getTotalUpdate();
 
-    const remainingTotal = document.getElementById('remaing-total-balance');
+    getRemainingTotal();
 
-
-})
+});
