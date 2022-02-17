@@ -32,10 +32,11 @@ function getSaveTotal() {
 };
 // calculate remaining total balance
 
-function getRemainingTotal(totalBalance, saveTotal) {
+function getRemainingTotal() {
     const remainingTotal = document.getElementById('remaing-total-balance').innerText = getTotalUpdate() - getSaveTotal();
 
-}
+};
+
 // calculate handler
 
 document.getElementById('calculate-total').addEventListener('click', function () {
@@ -44,6 +45,7 @@ document.getElementById('calculate-total').addEventListener('click', function ()
     getInputValue('rent');
     getInputValue('clothes');
     getTotalUpdate();
+    errorHandle();
 });
 // save handler
 
